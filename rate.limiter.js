@@ -20,7 +20,6 @@ redisClient.on('error', err => {
     await redisClient.set('hello', 'hello world');
     const value = await redisClient.get('hello');
     console.log(value);
-    await redisClient.disconnect();
 })()
 
 const RateLimiter = function(req, res, next) {
