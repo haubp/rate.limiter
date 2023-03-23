@@ -1,0 +1,10 @@
+{
+    "server": "127.0.0.1",
+    "port": "6379",
+    "domain": "",
+    "descriptor": {
+        "algorithm": "token_bucket",
+        "unit": "minute",
+        "request_per_unit": 5
+    }
+}
