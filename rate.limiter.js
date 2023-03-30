@@ -23,13 +23,13 @@ redisClient.on('error', err => {
 
 const RateLimiter = async function(req, res, next) {
     const counter = await redisClient.get('counter');
-    if (counter > 10) {
+    if (counter <= 0) {
         console.log("Rate access limit");
         res.send("Rate access limit, try again later")
         return;
     } else {
         console.log("Allow access");
-        await redisClient.set('counter', counter + 1);
+        await redisClient.set('notifyCounter', 1);
         console.log(counter);
     }
     next();
