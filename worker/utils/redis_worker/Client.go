@@ -1,4 +1,4 @@
-package main
+package redis_worker
 
 import (
 	"fmt"
@@ -11,7 +11,7 @@ import (
 
 var ctx = context.Background()
 
-func main() {
+func ConnectToRedis() {
 	client := redis.NewClient(&redis.Options{
 		Addr: "localhost:6379",
 		Password: "",
